@@ -7,10 +7,10 @@ function draw() {
 
   //this is a call to myShape()
   myShape(width / 2, height / 2, 1, 1);
-  myShape(width/3, height/3, 2, -1);
+  myShape(width / 3, height / 3, 2, -1);
   myShape(width * 2/3, height * 2/3, 0.5, 2);
 
-  for(let i = 0; i < 10; i++){
+  for(let i = 0; i < 12; i++){
     myShape(i * 50 + 30, 50, .5, i);
   }
   // myShape() takes three arguments
@@ -24,16 +24,20 @@ function draw() {
 
 function myShape(x, y, s, a) {
   // make this function more interesting
+  let w = 80;
+  let h = 50;
+
   push(); // make a separate layer
   translate(x, y); // move the origin point
   scale(s);
   rotate(a);
   fill(255)
-  ellipse(0, 0, 50, 50); // simple ellipse at the translated origin (0,0)
+  ellipse(0, 0, w, h); // simple ellipse at the translated origin (0,0)
   ellipse(-10, -5, 10);
   ellipse(10, -5, 10);
-  fill(255, 0, 0)
+  fill(255, 0, 0); //red
   ellipse(-10, -5, 3);
   ellipse(10, -5, 3);
+  line(0, -6, -4, 6);
   pop(); // dispose of the layer
 }
